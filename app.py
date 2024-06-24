@@ -9,8 +9,8 @@ from langchain.schema.messages import HumanMessage
 import os
 
 # Set up OpenAI API (replace with your actual API key)
-OPENAI_API_KEY = st.secrets('OPENAI_API_KEY')
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+openai_api_key = st.secrets('OPENAI_API_KEY')
+os.environ["OPENAI_API_KEY"] = openai_api_key
 
 st.title("AgriAssist: Your Smart Farming Companion")
 
@@ -18,7 +18,7 @@ st.title("AgriAssist: Your Smart Farming Companion")
 page = st.sidebar.selectbox("Choose a feature", ["Crop Recommendation", "Disease Identification"])
 
 def get_openai_response(prompt):
-    chat = ChatOpenAI(model='gpt-3.5-turbo', api_key = OPENAI_API_KEY)
+    chat = ChatOpenAI(model='gpt-3.5-turbo', api_key = openai_api_key )
     output = chat.invoke([HumanMessage(content=prompt)])
     return output.content
 
