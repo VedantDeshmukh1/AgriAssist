@@ -9,7 +9,7 @@ from langchain.schema.messages import HumanMessage
 import os
 
 # Set up OpenAI API (replace with your actual API key)
-openai_api_key = st.secrets('OPENAI_API_KEY')
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 os.environ["OPENAI_API_KEY"] = openai_api_key
 
 st.title("AgriAssist: Your Smart Farming Companion")
