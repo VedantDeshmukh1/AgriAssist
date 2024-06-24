@@ -1,1 +1,9 @@
+# -r requirements.txt
 
+streamlit
+requests
+Pillow
+python-dotenv
+langchain
+langchain-openai
+openai
